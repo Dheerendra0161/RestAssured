@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "page": { "type": "integer" },
+    "per_page": { "type": "integer" },
+    "totalrecord": { "type": "integer" },
+    "total_pages": { "type": "integer" },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "tourist_name": { "type": "string" },
+          "tourist_email": { "type": "string" },
+          "tourist_location": { "type": "string" },
+          "createdat": { "type": "string" }
+        },
+        "required": ["id", "tourist_name", "tourist_email", "tourist_location", "createdat"]
+      }
+    }
+  },
+  "required": ["page", "per_page", "totalrecord", "total_pages", "data"]
+}
