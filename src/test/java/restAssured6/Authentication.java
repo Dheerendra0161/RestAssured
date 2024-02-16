@@ -9,7 +9,7 @@ import static io.restassured.matcher.RestAssuredMatchers.*;
 
 public class Authentication {
 	// Note: BasicAuthentication,DigestAuthentication and PreemptiveAuthentication
-	// are required userID and Password ,the only difference is internally algorithm
+	// are required userID and Password ,the only difference is internal algorithm
 	// is different
 	@Test
 	void BasicAuthentication() {
@@ -60,10 +60,9 @@ public class Authentication {
 
 		// For OAuth developer will give these details to access the API
 		final String TOKEN = "265caa6ec34ed60e7f355ac18f487f09";
-		given().queryParam("appid", TOKEN).when().get(
-				"api.openweathermap.org/data/3.0/onecall?lat=30.489772&lon=-99.771335")
-				.then().statusCode(200).log().all();
-
+		given().queryParam("appid", TOKEN).when()
+				.get("api.openweathermap.org/data/3.0/onecall?lat=30.489772&lon=-99.771335").then().statusCode(200)
+				.log().all();
 	}
 
 }

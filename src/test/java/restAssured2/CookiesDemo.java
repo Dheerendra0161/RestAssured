@@ -16,7 +16,7 @@ public class CookiesDemo {
 	
 	@Test
 	public void getCookiesInfo() {
-		Response res = when().get("https://www.google.com/");
+		Response res = when().get("");
 
 		Map<String, String> cookiesValue = res.getCookies();
 

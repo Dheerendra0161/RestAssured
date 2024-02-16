@@ -1,4 +1,5 @@
 package restAssured2;
+
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -10,6 +11,6 @@ public class PathAndQueryParameters {
 	void testQueryAndPathParameters() {
 		given().pathParam("myPath", "users").queryParam("page", 2).queryParam("id", 5).when()
 				.get("https://reqres.in/api/{myPath}").then().statusCode(200).log().all();
-
+		// query parameters are then automatically appended to the URL
 	}
 }

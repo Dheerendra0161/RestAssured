@@ -13,21 +13,28 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import restAssured1.POJO_UserPostRequest;
 
 //POJO ------- Serilization ------>JSON Object ------->Deserilizatiion ------->POJO
+
+//Serialization and deserialization in REST Assured help streamline the process of interacting with APIs by facilitating the conversion between Java objects and JSON/XML representations, enabling seamless communication between the test code and the API endpoints.
 public class SerilizationDeseilization {
 	@Test
 	void convertingPOJOtoJSON() throws JsonProcessingException {
 		// Create Java object to represent the request body************************
-		POJO_UserPostRequest POJOuser = new POJO_UserPostRequest(); // POJO class object which is located in restAssured
+		POJO_UserPostRequest POJOuser = new POJO_UserPostRequest(); // POJO class object which is located in
+																	// restAssured1
 																	// package
 		POJOuser.setName("Vikas");
 		POJOuser.setAge(30);
 		POJOuser.setEmail("vikas@gmail.com");
 		POJOuser.setHobbies(Arrays.asList("Reading", "Gaming", "Traveling"));
 
-		// Conveting Java object into json object(serilization)
+		// Conveting Java object into json object(serilization) POJO----->JSON
+
+		// ObjectMapper functionality for reading and writing JSON, either to and from
+		// basic POJOs (POJO<----->JSON)
 		ObjectMapper objMapper = new ObjectMapper(); // Import it from import
 														// com.fasterxml.jackson.databind.ObjectMapper only
-		String jsonData = objMapper.writerWithDefaultPrettyPrinter().writeValueAsString(POJOuser);// Method will
+		String jsonData = objMapper.writerWithDefaultPrettyPrinter().writeValueAsString(POJOuser);// Method will convert
+																									// into String
 		System.out.println(jsonData);
 
 	}

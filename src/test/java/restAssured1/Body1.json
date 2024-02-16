@@ -1,0 +1,31 @@
+{
+  "company": "ABC Corporation",
+  "employees": [
+    {
+      "id": 1,
+      "name": "John",
+      "department": "Engineering",
+      "skills": ["Java", "Python", "SQL"]
+    },
+    {
+      "id": 2,
+      "name": "Alice",
+      "department": "Marketing",
+      "skills": ["Marketing Strategy", "Social Media Management"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 101,
+      "name": "Project X",
+      "status": "In Progress",
+      "team": ["John", "Alice", "Emily"]
+    },
+    {
+      "id": 102,
+      "name": "Project Y",
+      "status": "Completed",
+      "team": ["John", "Bob", "Carol"]
+    }
+  ]
+}
