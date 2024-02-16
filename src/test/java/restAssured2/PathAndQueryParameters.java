@@ -12,5 +12,4 @@ public class PathAndQueryParameters {
 				.get("https://reqres.in/api/{myPath}").then().statusCode(200).log().all();
 
 	}
-
 }

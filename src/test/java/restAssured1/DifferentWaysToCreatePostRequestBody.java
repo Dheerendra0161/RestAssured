@@ -21,8 +21,21 @@ public class DifferentWaysToCreatePostRequestBody {
 		HashMap<String, Object> requestBody = new HashMap<>();
 		requestBody.put("name", "John");
 		requestBody.put("age", 30);
-		requestBody.put("email", "john@example.com");
+		requestBody.put("email", "john@gmail.com");
 		given().contentType("application/json").body(requestBody).when().post("https://reqres.in/api/users").then()
+				.statusCode(201).log().all();
+	}
+
+	@Test
+	public void postRequestWithPOJO() {
+		// Create a User object to represent the request body************************
+		POJO_UserPostRequest POJOuser = new POJO_UserPostRequest();
+		POJOuser.setName("Vikas");
+		POJOuser.setAge(30);
+		POJOuser.setEmail("vikas@gmail.com");
+		POJOuser.setHobbies(Arrays.asList("Reading", "Gaming", "Traveling"));
+		// Send a POST request with the User object as the request body
+		given().contentType("application/json").body(POJOuser).when().post("https://reqres.in/api/users").then()
 				.statusCode(201).log().all();
 	}
 
@@ -49,26 +62,17 @@ public class DifferentWaysToCreatePostRequestBody {
 	}
 
 	@Test
-	public void postRequestWithPOJO() {
-		// Create a User object to represent the request body************************
-		POJO_UserPostRequest POJOuser = new POJO_UserPostRequest();
-		POJOuser.setName("Vikas");
-		POJOuser.setAge(30);
-		POJOuser.setEmail("vikas@gmail.com");
-		POJOuser.setHobbies(Arrays.asList("Reading", "Gaming", "Traveling"));
-		// Send a POST request with the User object as the request body
-		given().contentType("application/json").body(POJOuser).when()
-				.post("https://reqres.in/api/users").then().statusCode(201).log().all();
-	}
-
-	@Test
 	public void postRequestUsingExternalJSONFile() {
 		try {
 			String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\restAssured1\\" + "Body.json";
 			// Create a FileReader to read the JSON file
 			FileReader fileReader = new FileReader(filePath);
 
-			// Create a JsonTokener to parse the JSON file contents
+			// Create a JsonTokener to parse the JSON file contents.Parsing JSON file
+			// contents refers to the process of extracting data from a JSON (JavaScript
+			// Object Notation) file. This process involves reading the JSON file,
+			// interpreting its structure, and extracting specific data elements such as
+			// values, arrays, or objects.
 			JSONTokener jsonTokener = new JSONTokener(fileReader);
 
 			// Create a JSONObject by passing the JsonTokener

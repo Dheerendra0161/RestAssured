@@ -13,7 +13,7 @@ public class CookiesDemo {
 		given().when().get("https://www.google.com/").then()
 				.cookie("AEC", "Ae3NU9Ofi92wSoVoIRKX5neXJ27XKF6iBhXaTV4qPOFZdixYUUkVHovaB-A").log().all();
 	}
-
+	
 	@Test
 	public void getCookiesInfo() {
 		Response res = when().get("https://www.google.com/");

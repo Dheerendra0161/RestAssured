@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 //  visit the site to get schema:  https://jsonformatter.org/json-to-jsonschema visit the site to get schema
 // To ge the JSON and xml response: http://restapi.adequateshop.com/swagger/ui/index
-//Note: file must be with json extension
+//Note: Create file in resources and the file must be with json extension
 public class JSONSchemaValidator {
 	@Test
 	public void jsonSchemaValidator() {

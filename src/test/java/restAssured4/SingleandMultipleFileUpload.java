@@ -26,20 +26,30 @@ public class SingleandMultipleFileUpload {
 
 	@Test
 	public void uploadMultipleFiles() {
-		File file1 = new File("path/to/your/file1.txt");
-		File file2 = new File("path/to/your/file2.txt");
-		File file3 = new File("path/to/your/file3.txt");
+	    File file1 = new File("path/to/your/file1.txt");
+	    File file2 = new File("path/to/your/file2.txt");
+	    File file3 = new File("path/to/your/file3.txt");
 
-		given().multiPart("file", file1).multiPart("file", file2).multiPart("file", file3)
-				.contentType("multipart/form-data").when().post("http://localhost:8080/upload").then().statusCode(200)
-				.body("[0].fileName", equalTo("file1.txt")).body("[0].fileName", equalTo("file2.txt"))
-				.body("[0].fileName", equalTo("file3.txt")).log().all();
+	    given()
+	        .multiPart("file", file1)
+	        .multiPart("file", file2)
+	        .multiPart("file", file3)
+	        .contentType("multipart/form-data")
+	    .when()
+	        .post("http://localhost:8080/upload")
+	    .then()
+	        .statusCode(200)
+	        .body("[0].fileName", equalTo("file1.txt"))
+	        .body("[1].fileName", equalTo("file2.txt"))
+	        .body("[2].fileName", equalTo("file3.txt"))
+	        .log().all();
 	}
+
 
 
 	    @Test
 	    public void uploadMultipleFilesWithArray() {
-	    	//Won't work for all kind of API
+	    	//It may won't work for all kind of API
 	        File[] files = {
 	            new File("path/to/your/file1.txt"),
 	            new File("path/to/your/file2.txt"),
