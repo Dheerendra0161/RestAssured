@@ -17,3 +17,4 @@ public class GetUsers {
 		.body("data.size()", greaterThan(0)); // Assuming you expect at least one user
 	}
 }
+//Note run it from the testng.xml file

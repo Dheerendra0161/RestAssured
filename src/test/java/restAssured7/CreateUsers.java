@@ -34,3 +34,4 @@ public class CreateUsers {
         System.out.println("id is: " + id);
     }
 }
+//Note run it from the testng.xml file

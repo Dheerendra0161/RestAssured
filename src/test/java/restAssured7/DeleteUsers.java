@@ -22,3 +22,4 @@ public class DeleteUsers {
             .log().all();
     }
 }
+//Note run it from the testng.xml file

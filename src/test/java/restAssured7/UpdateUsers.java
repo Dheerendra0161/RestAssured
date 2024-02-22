@@ -31,3 +31,4 @@ public class UpdateUsers {
             .log().all();
     }
 }
+//Note run it from the testng.xml file

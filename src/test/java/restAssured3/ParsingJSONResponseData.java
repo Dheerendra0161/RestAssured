@@ -1,15 +1,13 @@
 package restAssured3;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-
-import static io.restassured.matcher.RestAssuredMatchers.*;
 
 public class ParsingJSONResponseData {
 	@Test

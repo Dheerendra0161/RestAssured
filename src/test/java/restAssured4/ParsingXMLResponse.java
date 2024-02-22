@@ -44,7 +44,7 @@ public class ParsingXMLResponse {
 
 		Response res = given().when().get("http://restapi.adequateshop.com/api/Traveler?page=1");
 		XmlPath xmlObj = new XmlPath(res.asString()); // convert res object into string format
-
+		
 		// If we want to use entire response data as string then we have to use the
 		// asString() method
 		// If we want to use only response data into string format then use toString()

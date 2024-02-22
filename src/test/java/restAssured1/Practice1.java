@@ -1,7 +1,14 @@
 package restAssured1;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import static io.restassured.RestAssured.given;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.annotations.Test;
@@ -15,19 +22,6 @@ import io.restassured.matcher.RestAssuredMatchers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 public class Practice1 {
 	@Test
