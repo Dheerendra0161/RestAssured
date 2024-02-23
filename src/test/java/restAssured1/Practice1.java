@@ -85,6 +85,7 @@ public class Practice1 {
 		}
 
 	}
+	
 
 	@Test
 	public void cookies() {
@@ -111,16 +112,20 @@ public class Practice1 {
 		Response resp = given().when().get("http://restapi.adequateshop.com/api/TravelAgent");
 		String resBody = resp.getBody().asString();
 		System.out.println(resBody);
+		System.out.println("##############################");
 		// String id = JsonPath.from(resBody).getString("id");
 		// System.out.println(id);
 
 		// JsonPath Instantiate a JsonPath object to parse the JSON response.
+		// Creating a JsonPath object with the response body.
+		//Allowing for easy navigation and extraction of data from JSON responses.
 		JsonPath jsonPath = new JsonPath(resBody);
 
 		// Get the size of the JSON array in the response.
 		// size() function is used to retrieve the number of elements in the JSON
 		// array. This function counts the number of elements at the root level of the
 		// JSON structure
+		
 		int size = jsonPath.getInt("size()");
 
 		for (int i = 0; i < size; i++) {
@@ -135,6 +140,7 @@ public class Practice1 {
 		}
 	}
 
+	
 	@Test
 	void QueryAndPathParamenters() {
 		given().pathParam("myPath", "users").queryParam("page", 2).queryParam("id", 5).when()
@@ -142,6 +148,7 @@ public class Practice1 {
 		// query parameters are then automatically appended to the URL
 	}
 
+	
 	@Test
 	void TypesOfLog() {
 		System.out.println("All******************************************************************");

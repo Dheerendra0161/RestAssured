@@ -25,8 +25,13 @@ public class HTTPRequest {
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("name", "dheerendra");
 		data.put("job", "tester");
-		id = given().contentType("application/json").body(data).when().post("https://reqres.in/api/users").jsonPath()
+		id = given().contentType("application/json")
+				.body(data)
+				.when().post("https://reqres.in/api/users")
+				.jsonPath()
 				.getInt("id");
+		
+		        
 
 	}
 
