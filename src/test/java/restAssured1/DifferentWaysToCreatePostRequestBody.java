@@ -74,7 +74,7 @@ public class DifferentWaysToCreatePostRequestBody {
 			// interpreting its structure, and extracting specific data elements such as
 			// values, arrays, or objects.
 			JSONTokener jsonTokener = new JSONTokener(fileReader);
-
+			
 			// Create a JSONObject by passing the JsonTokener
 			JSONObject jsonObject = new JSONObject(jsonTokener);
 

@@ -16,9 +16,8 @@ public class HeadersInfo {
 
 	@Test
 	public void getHeader() {
-
-		//given().when().get("https://www.google.com/").then().log().all();
-		//all()including headers, status code, response body, cookies,headers etc.
+		// given().when().get("https://www.google.com/").then().log().all();
+		// all() including headers, status code, response body, cookies,headers etc.
 		given().when().get("https://www.google.com/").then().log().headers();
 	}
 
@@ -29,7 +28,7 @@ public class HeadersInfo {
 		Headers headers = res.getHeaders();
 
 		System.out.println(headers);
-
+		System.out.println("*************************************");
 		for (Header hd : headers) {
 			System.out.println(hd.getName() + ":" + hd.getValue());
 

@@ -1,16 +1,13 @@
 package restAssured5;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-import io.restassured.*;
-import io.restassured.matcher.RestAssuredMatchers;
-import io.restassured.module.jsv.JsonSchemaValidator;
+import static io.restassured.RestAssured.given;
 
 import org.testng.annotations.Test;
 
-import static io.restassured.matcher.RestAssuredMatchers.*;
+import io.restassured.matcher.RestAssuredMatchers;
+import io.restassured.module.jsv.JsonSchemaValidator;
 
-//  visit the site to get schema:  https://jsonformatter.org/json-to-jsonschema visit the site to get schema
+//  visit this site to get schema:  https://jsonformatter.org/json-to-jsonschema 
 // To ge the JSON and xml response: http://restapi.adequateshop.com/swagger/ui/index
 //Note: Create file in resources and the file must be with json extension.
 
@@ -19,7 +16,7 @@ public class JSONSchemaValidator {
 	public void jsonSchemaValidator() {
 		given().when().get("http://restapi.adequateshop.com/api/Tourist").then().assertThat()
 				.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schema.json"));
-		// Converted JSON is written in schema.json in resources package
+		// Converted JSON which is written in schema.json file in resources package
 	}
 
 	@Test

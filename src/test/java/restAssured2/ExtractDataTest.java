@@ -15,8 +15,9 @@ public class ExtractDataTest {
 	void extractData() {
 		Response res = when().get("http://restapi.adequateshop.com/api/TravelAgent");
 		String responseBody = res.getBody().asString();
+		System.out.println(responseBody);
 		String title = JsonPath.from(responseBody).getString("agent_location");
-
+		
 		System.out.println("Page title: " + title);
 	}
 }

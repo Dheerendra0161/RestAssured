@@ -14,3 +14,4 @@ public class PathAndQueryParameters {
 		// query parameters are then automatically appended to the URL
 	}
 }
+
