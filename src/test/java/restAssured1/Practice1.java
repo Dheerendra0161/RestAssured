@@ -60,8 +60,9 @@ public class Practice1 {
 		POJOuser.setEmail("dheerendra@gmail.com");
 		POJOuser.setHobbies(Arrays.asList("Reading", "Dancing", "Travelling"));
 
-		given().contentType("application/json").body(POJOuser).when().post("https://reqres.in/api/users").then()
-				.statusCode(201).log().all();
+		 given().contentType("application/json").body(POJOuser).when()
+		.post("https://reqres.in/api/users")
+		.then().statusCode(201).log().all();
 	}
 
 	@Test
@@ -118,7 +119,7 @@ public class Practice1 {
 
 		// JsonPath Instantiate a JsonPath object to parse the JSON response.
 		// Creating a JsonPath object with the response body.
-		//Allowing for easy navigation and extraction of data from JSON responses.
+		// Allowing for easy navigation and extraction of data from JSON responses.
 		JsonPath jsonPath = new JsonPath(resBody);
 
 		// Get the size of the JSON array in the response.

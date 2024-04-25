@@ -23,7 +23,7 @@ public class CreateUsers {
         obj.put("status", "Inactive");
         String token = "9f378887517c46948b9c0e768423abb96c0dcf03b61c7b3bd40af81f74d8ff6d";
 
-        id = given()
+        id =     given()
                 .headers("Authorization", "Bearer " + token) // Corrected the header key to "Authorization"
                 .contentType("application/json")
                 .body(obj.toString())

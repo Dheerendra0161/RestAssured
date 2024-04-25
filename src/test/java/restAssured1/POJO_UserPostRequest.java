@@ -8,6 +8,11 @@ public class POJO_UserPostRequest {
 	private String email;
 	private List<String> hobbies;
 
+//  POJO stands for "Plain Old Java Object." It's a term used in Java programming
+//	to refer to a simple Java class that encapsulates data and provides getter and setter 
+//	methods for accessing and modifying that data. POJOs are often used to represent 
+//	data structures or entities in an application.
+
 	// Getters and setters
 	// You can generate them using your IDE or manually
 	// Here's an example of manually written getters and setters:

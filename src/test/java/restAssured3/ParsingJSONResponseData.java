@@ -13,8 +13,9 @@ public class ParsingJSONResponseData {
 	@Test
 	void jsonResponse() {
 		// Approach1
-		given().contentType(io.restassured.http.ContentType.JSON) // Use ContentType.JSON
-				.when().get("https://reqres.in/api/users?page=2").then().statusCode(200)
+		        given().contentType(io.restassured.http.ContentType.JSON) // Use ContentType.JSON
+				.when().get("https://reqres.in/api/users?page=2")
+				.then().statusCode(200)
 				.header("Content-Type", "application/json; charset=utf-8")
 				.body("data[1].last_name", equalTo("Ferguson"))
 				// json response path https://jsonpathfinder.com/
@@ -25,6 +26,7 @@ public class ParsingJSONResponseData {
 		// verify more body response if necessary
 	}
 
+	
 	@Test
 	void jsonResponse2() {
 		// Approach2
@@ -50,8 +52,8 @@ public class ParsingJSONResponseData {
 				.when().get("https://reqres.in/api/users?page=2");
 
 		JSONObject jsonObj = new JSONObject(res.asString()); // Parsing of the JSON response: By using the JSON Object
-																// we can parse the data ,we can also parse xml response
-		boolean status = false;
+																// we can parse the data ,we can also parse xml response.
+ 		boolean status = false;   // Use flags
 		for (int i = 0; i < jsonObj.getJSONArray("data").length(); i++) {
 			String firstName = jsonObj.getJSONArray("data").getJSONObject(i).getString("first_name");
 

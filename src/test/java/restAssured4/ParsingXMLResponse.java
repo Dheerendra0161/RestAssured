@@ -18,7 +18,9 @@ public class ParsingXMLResponse {
 	void xmlResponse() {
 		// Approach1
 		// without storing the response in the variable
-		given().when().get("http://restapi.adequateshop.com/api/Traveler?page=1").then()
+		 given()
+		.when().get("http://restapi.adequateshop.com/api/Traveler?page=1")
+		.then()
 				.headers("Content-Type", "application/xml; charset=utf-8").statusCode(200)
 				.body("TravelerinformationResponse.page", equalTo("1"))
 				.body("TravelerinformationResponse.travelers.Travelerinformation[0].email",

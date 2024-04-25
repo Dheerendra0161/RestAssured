@@ -67,14 +67,19 @@ public class DifferentWaysToCreatePostRequestBody {
 			String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\restAssured1\\" + "Body.json";
 			// Create a FileReader to read the JSON file
 			FileReader fileReader = new FileReader(filePath);
+//			Note:
+//			FileReader() is used for reading text files in character mode.It's typically used for reading text files character by character or line by line.
+//			File() is used for file-related operations like file manipulation, but it doesn't read the file content itself.
+//			FileInputStream() is used for reading binary data from files in byte mode. It's typically used for reading binary files or files that contain non-textual data.
 
-			// Create a JsonTokener to parse the JSON file contents.Parsing JSON file
+			// Create a JsonTokener to parse the JSON file contents. Parsing JSON file
 			// contents refers to the process of extracting data from a JSON (JavaScript
 			// Object Notation) file. This process involves reading the JSON file,
 			// interpreting its structure, and extracting specific data elements such as
 			// values, arrays, or objects.
+
 			JSONTokener jsonTokener = new JSONTokener(fileReader);
-			
+
 			// Create a JSONObject by passing the JsonTokener
 			JSONObject jsonObject = new JSONObject(jsonTokener);
 

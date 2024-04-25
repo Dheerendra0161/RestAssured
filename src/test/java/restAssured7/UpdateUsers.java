@@ -7,7 +7,12 @@ import com.github.javafaker.Faker;
 import static io.restassured.RestAssured.given;
 
 public class UpdateUsers {
-
+	//ITestContext is an interface that represents the context of a test run. 
+//	It provides information about the current test run, including details about 
+//	the test suite, test methods, test parameters, and test results. The ITestContext 
+//	interface allows you to access this information and perform various actions or 
+//	assertions based on the test context.
+	
     @Test
     void updateUsers(ITestContext context) {
         Faker faker = new Faker();
